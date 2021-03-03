@@ -1,8 +1,8 @@
 import User from './User'
 
-export interface Reservation {
+export interface IReservation {
     Id: number;
-    TotalOcupants: string;
+    TotalOcupants: number;
     ReservedTo: User;
     Date: Date;
     Hour: string;

@@ -18,16 +18,13 @@ function App() {
       </header>
       <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/reservation">Reservation</Link>
-          </li>
-        </ul>
 
-        <hr />
+            <Link to="/">Home</Link>
+      
+            <hr />
+            <Link to="/reservation">Reservation</Link>
+  
+
         <Switch>
           <Route exact path="/">
             <Home />
