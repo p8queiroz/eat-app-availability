@@ -10,7 +10,8 @@ import {
 import Home from './pages/home';
 import Reservation from './pages/Reservation';
 
-function App() {
+
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
