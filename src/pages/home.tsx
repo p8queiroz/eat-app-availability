@@ -8,10 +8,12 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import Button from '@material-ui/core/Button';
 import { Person, DateRange, Schedule } from '@material-ui/icons';
 import AvailableTimeTable from '../components/AvailableTimeTable/AvailableTimeTable';
+import { IReservation } from '../models/IReservation';
 
- <Select
-   IconComponent = {Person}
- />
+type Props = {
+  saveReservation: (reservation: IReservation | any) => void
+}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     formControl: {
@@ -24,9 +26,39 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const  Home: React.FC = () =>  {
+const  Home: React.FC<Props> = ({ saveReservation }) =>  {
   
+  const [reservation, setReservation] = React.useState<IReservation | {}>()
+
+  const handleReservationData = (e: React.FormEvent<HTMLInputElement>) => {
+    setReservation({
+      ...reservation,
+      [e.currentTarget.id]: e.currentTarget.value,
+    })
+  }
+
+  const addNewReservation = (e: React.FormEvent) => {
+    e.preventDefault();
+    const tempResevation: IReservation = {
+      Id: Math.random(),
+      Date: new Date(),
+      Hour: `${Math.random()}hh`,
+      ReservedTo: { 
+          Id: 2, 
+          Email: "pqhqs@g.com",
+          FirsName: "Paulo",
+          LastName: "Queiroz",
+          Phone: 5585242343423
+      },
+      TotalOcupants: 2,     
+    };
+    
+    saveReservation(tempResevation)
+    //saveReservation(reservation);
+  }
+
   const classes = useStyles();
+
   const [state, setState] = React.useState<{ age: string | number; name: string }>({
     age: '',
     name: 'hai',
@@ -95,7 +127,8 @@ const  Home: React.FC = () =>  {
           <option value={30}>Thirty</option>
         </Select>
       </FormControl>
-      <Button variant="contained">Default</Button>
+      <Button variant="contained">Serch</Button>
+      <Button onClick={addNewReservation} variant="contained">ADD STORE [TEMPORATIO]</Button>
       <AvailableTimeTable/>
       </>
   );

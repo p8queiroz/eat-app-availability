@@ -2,6 +2,14 @@ import { IReservation } from "../models/IReservation"
 import { DispatchType, ReservationAction } from "./type"
 import * as actionTypes from "./actionTypes"
 
+const  simulateHttpRequest = (action: ReservationAction) => {
+  return (dispatch: DispatchType) => {
+    setTimeout(() => {
+      dispatch(action)
+    }, 500)
+  }
+}
+
 export const  addReservation = (reservation: IReservation) => {
    
   const action: ReservationAction = {
@@ -20,10 +28,3 @@ export const removeReservation = (reservation: IReservation) => {
     return simulateHttpRequest(action)
   }
   
-const  simulateHttpRequest = (action: ReservationAction) => {
-  return (dispatch: DispatchType) => {
-    setTimeout(() => {
-      dispatch(action)
-    }, 500)
-  }
-}
