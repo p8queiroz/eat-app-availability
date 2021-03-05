@@ -31,10 +31,13 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       padding: "10px",
       outline: "none",
+      color: "#91C864"
     },
 
     button: {
-      color: "#91C864"
+      backgroundColor: "#91C864",
+      color: "white",
+      border: 0
     }
   }),
 );
@@ -114,7 +117,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                   <option value="fa fa-address-card"> &#xf017; line chart</option>
                   <option value="fa fa-address-card"> &#xf017; Pie Chart</option>
               </select>
-                  <Button variant="contained">Serch</Button>
+              <button className={classes.button}>Search</button>
         </div>
           
        {/* <FormControl variant="outlined" className={classes.formControl}>
