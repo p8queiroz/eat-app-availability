@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react';
+import React, { Dispatch, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
@@ -12,8 +12,9 @@ import Reservation from './pages/Reservation';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ReservationState } from './store/type';
 import { IReservation } from './models/IReservation';
-import { addReservation } from './store/actionCreators';
-
+import { addReservation } from './store/actions/actions.reservation';
+//import useEffectAsync from './utils';
+import { loadRestautantData } from './store/actions/actions.restaurant';
 
 const App: React.FC = () => {
   
@@ -23,6 +24,13 @@ const App: React.FC = () => {
   );
 
   const dispatch: Dispatch<any> = useDispatch();
+
+
+  useEffect(() => {
+    const fetchData = async () => loadRestautantData(dispatch);
+    fetchData();
+  }, []); 
+
 
   
   const saveReservation = React.useCallback(

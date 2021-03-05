@@ -1,40 +1,13 @@
-import { IReservation } from "../models/IReservation"
-import * as actionTypes from "./actionTypes"
-import { ReservationAction, ReservationState } from "./type"
+import { IReservation } from "../../models/IReservation"
+import * as actionTypes from "../actionTypes"
+import { ReservationAction, ReservationState } from "../type"
 
 const initialState: ReservationState = {
-    reservation: [
-      {
-        Id: 1,
-        Date: new Date(),
-        Hour: "10h",
-        ReservedTo: { 
-            Id: 2, 
-            Email: "pqhqs@g.com",
-            FirsName: "Paulo",
-            LastName: "Queiroz",
-            Phone: 5585242343423
-        },
-        TotalOcupants: 2,     
-      },
-      {
-        Id: 3,
-        Date: new Date(),
-        Hour: "10h",
-        ReservedTo: { 
-            Id: 4, 
-            Email: "pqhqs@g.com",
-            FirsName: "Paulo",
-            LastName: "Queiroz",
-            Phone: 5585242343423
-        },
-        TotalOcupants: 2,     
-      },
-    ],
+    reservation: [],
   }
 
 
-  const reducer = (
+  const reservationReducer = (
     state: ReservationState = initialState,
     action: ReservationAction
   ): ReservationState => {
@@ -67,4 +40,4 @@ const initialState: ReservationState = {
     return state
   }
   
-  export default reducer
+  export default reservationReducer
