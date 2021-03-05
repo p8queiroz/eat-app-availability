@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from './pages/home';
+import Restaurant from './pages/Restaurant';
 import Reservation from './pages/Reservation';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ReservationState } from './store/type';
@@ -29,10 +29,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => loadRestautantData(dispatch);
     fetchData();
-  }, []); 
+  }, [dispatch]); 
 
-
-  
   const saveReservation = React.useCallback(
     (reservation: IReservation) => dispatch(addReservation(reservation)),
     [dispatch]
@@ -50,7 +48,7 @@ const App: React.FC = () => {
               <Link to="/reservation">Reservation</Link>
           <Switch>
             <Route exact path="/">
-              <Home saveReservation={saveReservation}/>
+              <Restaurant saveReservation={saveReservation}/>
             </Route>
             <Route path="/reservation">
               <Reservation />

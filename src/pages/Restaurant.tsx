@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const  Home: React.FC<Props> = ({ saveReservation }) =>  {
+const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
   
   const [reservation, setReservation] = React.useState<IReservation | {}>()
 
@@ -131,4 +131,4 @@ const  Home: React.FC<Props> = ({ saveReservation }) =>  {
   );
 }
 
-export default Home;
+export default Restaurant;

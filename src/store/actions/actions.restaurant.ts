@@ -11,8 +11,7 @@ const  simulateHttpRequest = (action: ReservationAction) => {
 }
 
 export const loadRestautantData = async (dispatch: React.Dispatch<any>) => {
-  //dispatch(setLoading(true));
-  //debugger -- testing 
+  
   const restaurant = await getRestautant();
 
   const action: RestaurantAction = {
