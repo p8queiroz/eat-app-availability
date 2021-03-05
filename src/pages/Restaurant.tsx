@@ -13,20 +13,28 @@ type Props = {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    formControl: {
-      margin: theme.spacing(0),
-      borderRadius: 0,
-      minWidth: 120,
-    },
-    selectEmpty: {
-      marginTop: theme.spacing(2),
-    },
     form: {
       border: "1px solid #eee",
       padding: "1.5rem",
+      display: "flex",
       width: "50%",
       boxSizing: "border-box",
       margin: "0 auto",
+    },   
+    inputContainer: {
+      display: "flex",
+      width: "100%",
+      marginBottom: "15px"
+    },
+
+    inputField: {
+      width: "100%",
+      padding: "10px",
+      outline: "none",
+    },
+
+    button: {
+      color: "#91C864"
     }
   }),
 );
@@ -85,7 +93,6 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
 
  //TODO
   const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-    debugger
     const name = event.target.name as keyof typeof state;
     setState({
       ...state,
@@ -94,8 +101,23 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
   };
 
   return (
-    <div className={classes.form}>
-       <FormControl variant="outlined" className={classes.formControl}>
+    <div>
+        <div className={classes.form}>
+              <select name="totalReservation"  className={`${classes.inputField} fa`}>
+                 {ocupants.map(item => <option value=""> &#xf007; {` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
+              </select>
+              <select name="date" className={`${classes.inputField} fa`}>
+                  <option value="fa fa-address-card"> &#xf073; line chart</option>
+                  <option value="fa fa-address-card"> &#xf073; Pie Chart</option>
+              </select>
+              <select  name="hour" className={`${classes.inputField} fa`}>
+                  <option value="fa fa-address-card"> &#xf017; line chart</option>
+                  <option value="fa fa-address-card"> &#xf017; Pie Chart</option>
+              </select>
+                  <Button variant="contained">Serch</Button>
+        </div>
+          
+       {/* <FormControl variant="outlined" className={classes.formControl}>
           <Select
             IconComponent = {Person}
             native
@@ -144,10 +166,10 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
           <option value={20}>Twenty</option>
           <option value={30}>Thirty</option>
         </Select>
-      </FormControl>
-      <Button variant="contained">Serch</Button>
+      </FormControl> */}
+      {/* <Button variant="contained">Serch</Button> */}
       {/* <Button onClick={addNewReservation} variant="contained">ADD STORE [TEMPORATIO]</Button> */}
-      <AvailableTimeTable/>
+      {/* <AvailableTimeTable/> */}
     </div>
   );
 }

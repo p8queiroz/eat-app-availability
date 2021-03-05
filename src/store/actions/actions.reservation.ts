@@ -16,8 +16,6 @@ export const loadRestautantData = async (dispatch: React.Dispatch<any>) => {
   //dispatch(setLoading(true));
   //debugger -- testing 
   const restaurant = await getRestautant();
-
-  debugger
    const action: RestaurantAction = {
       type: actionTypes.ADD_RESTAURANT,
       restaurant: restaurant
