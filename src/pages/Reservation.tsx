@@ -41,9 +41,9 @@ const  Reservation: React.FC = () =>  {
               <textarea name="field5" className="field-style" placeholder="Special Requests"></textarea>
             </li>
             <li>
-              <span>
+              <div className="align-left">
                 by continuing, you agree to Eat's Terms of Service and Policy.
-              </span>
+              </div>
             </li>
             <li>
              <input type="submit" value="Complete Reservation" onClick={navigateTo} />

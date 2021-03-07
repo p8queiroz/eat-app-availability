@@ -4,6 +4,8 @@
 	margin: 50px auto;
 	border-radius: .7rem;
 	border: 2px solid #f7f7f7;
+	font-size: 1rem;
+    color: #afafaf;
 }
 
 .formContainer ul{
@@ -69,6 +71,10 @@
 	border:1px solid #d2d6d8;
 	width: 10%;
 	color: #cfd2d3;
+}
+
+.formContainer ul li div.align-left{
+	float:left;
 }
 
 .formContainer ul li input.align-left{
