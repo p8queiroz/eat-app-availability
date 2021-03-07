@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { Dispatch, useEffect } from 'react';
 import AvailableTimeTable from '../components/AvailableTimeTable/AvailableTimeTable';
 import { IReservation } from '../models/IReservation';
 import { getRestaurantData } from '../store/selectors/restaurant.selector';
-import './Restaurant.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import './Restaurant.css';
+import { loadTimeSlotData } from '../store/actions/actions.reservation';
 
 type Props = {
   saveReservation: (reservation: IReservation | any) => void
@@ -18,7 +19,10 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
   const { name, address_line_1 } = objectAttributes?.openings ? objectAttributes : [];
   const openingsDate = Object.keys(objectAttributes?.openings || []); 
  
-  const [hoursSlot, setHoursSlot] = React.useState<Array<string>>([]);
+  const dispatch: Dispatch<any> = useDispatch();
+
+  const [hourOpening, setHourOpening] = React.useState<Array<string>>([]);
+  const [hourSlotOpening, setHourSlotOpening] = React.useState<Array<string>>([]);
   const [searchResults, setSearchResults] =  React.useState<Boolean>(false);
 
   const ocupants = Array.from(Array(50).keys()).map(i => i + 1);
@@ -41,8 +45,9 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
     } 
   }, [reservation.hourSlot])
 
+
   useEffect(() => {
-    setHoursSlot(restaurantInfo?.attributes?.openings[reservation.date]);
+    setHourOpening(restaurantInfo?.attributes?.openings[reservation.date]);
     if(!reservation.date)
     setReservation({
       ...reservation,
@@ -50,8 +55,10 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
     });    
   }, [reservation.date])
 
-  const search =  (e: React.MouseEvent<HTMLInputElement>) => {
+  const search =  async (e: React.MouseEvent<HTMLInputElement>) => {
       e.stopPropagation();
+      const data = await loadTimeSlotData(reservation.date, reservation.hour); 
+      setHourSlotOpening(data);
       setSearchResults(true);
   }
 
@@ -99,15 +106,15 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                     <select   name="hour" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
                       <option key={'hour-option'} value=""> &#xf017; Select </option>
                           {
-                            hoursSlot && hoursSlot.length && (
-                              hoursSlot.map((item) => <option key={item} value={item}> &#xf017; {item} </option>)
+                            hourOpening && hourOpening.length && (
+                              hourOpening.map((item) => <option key={item} value={item}> &#xf017; {item} </option>)
                             )
                           }
                     </select>
                     <input type="submit" onClick={search} value="Search" />
                 </li>
                 <li>
-                  {searchResults && (<AvailableTimeTable slothour={slothour}/>)}                  
+                  {searchResults && hourSlotOpening && hourSlotOpening.length && (<AvailableTimeTable hourSlotOpening={hourSlotOpening} slothour={slothour}/>)}                  
                 </li>
           </ul>
       </div>              

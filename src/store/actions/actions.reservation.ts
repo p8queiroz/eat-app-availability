@@ -1,8 +1,7 @@
-import { IReservation } from "../../models/IReservation"
-import { DispatchType, ReservationAction, RestaurantAction } from "../type"
-import * as actionTypes from "../actionTypes"
-import { getRestautant } from "../../data/dataApi"
-import { IRestaurant } from "../../models/IRestaurant"
+import { IReservation } from "../../models/IReservation";
+import { DispatchType, ReservationAction, RestaurantAction } from "../type";
+import * as actionTypes from "../actionTypes";
+import { getRestautant, getTimeSlots } from "../../data/dataApi";
 
 const  simulateHttpRequest = (action: ReservationAction) => {
   return (dispatch: DispatchType) => {
@@ -19,8 +18,13 @@ export const loadRestautantData = async (dispatch: React.Dispatch<any>) => {
       restaurant: restaurant
     }
   return  dispatch(action);
-  
 };
+
+export const loadTimeSlotData = async (date: string, hour: string) => {
+  const timeSlots = await getTimeSlots(date, hour);
+  return  timeSlots;
+};
+
 
 export const addReservation = (reservation: IReservation) => {
    debugger

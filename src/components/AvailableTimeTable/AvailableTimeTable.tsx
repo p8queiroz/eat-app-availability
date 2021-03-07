@@ -35,10 +35,12 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type Props = {
-  slothour: (value: string) => void
+  slothour: (value: string) => void,
+  hourSlotOpening: any[]
 }
 
-const AvailableTimeTable: React.FC<Props> = ({ slothour }) => {
+const AvailableTimeTable: React.FC<Props> = ({ slothour, hourSlotOpening }) => {
+    
     const classes = useStyles();
   
     const handleChange: (value: string) => void = (value: string) => {
@@ -49,10 +51,9 @@ const AvailableTimeTable: React.FC<Props> = ({ slothour }) => {
      <div className={classes.hoursContainer}>
          <div className={classes.textSection}>Available Openning, please select a time to reserve:</div>
          <div className={classes.availableSection}>
-              <button onClick={() => handleChange('11:40')} className={classes.notAvailableSlot}>11:40</button>
-              <button onClick={() => handleChange('11:45')} className={classes.availableSlot}>11:45</button>
-              <button onClick={() => handleChange('11:50')} className={classes.availableSlot}>11:50</button>
-              <button onClick={() => handleChange('11:55')} className={classes.availableSlot}>11:55</button>
+           {hourSlotOpening && hourSlotOpening.length && (
+             hourSlotOpening.map(ele => <button key={ele.id} onClick={() => handleChange(ele.attributes.label)} className={ele.attributes.available ? classes.availableSlot:classes.notAvailableSlot}>{ele.attributes.label}</button>)
+           )}
          </div>
        </div> 
   );

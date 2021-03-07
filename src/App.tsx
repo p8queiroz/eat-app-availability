@@ -25,7 +25,6 @@ const App: React.FC = () => {
 
   const dispatch: Dispatch<any> = useDispatch();
 
-
   useEffect(() => {
     const fetchData = async () => loadRestautantData(dispatch);
     fetchData();
