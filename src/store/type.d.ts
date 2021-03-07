@@ -2,7 +2,7 @@ import { IReservation } from "../models/IReservation";
 import { IRestaurant } from "../models/IRestaurant";
 
 type ReservationState = {
-    reservation: IReservation[]
+    reservation: IReservation
 }
 type RestaurantState = {
   restaurant: IRestaurant

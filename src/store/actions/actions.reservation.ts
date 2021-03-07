@@ -13,8 +13,6 @@ const  simulateHttpRequest = (action: ReservationAction) => {
 }
 
 export const loadRestautantData = async (dispatch: React.Dispatch<any>) => {
-  //dispatch(setLoading(true));
-  //debugger -- testing 
   const restaurant = await getRestautant();
    const action: RestaurantAction = {
       type: actionTypes.ADD_RESTAURANT,
@@ -25,12 +23,11 @@ export const loadRestautantData = async (dispatch: React.Dispatch<any>) => {
 };
 
 export const addReservation = (reservation: IReservation) => {
-   
+   debugger
   const action: ReservationAction = {
       type: actionTypes.ADD_RESERVATION,
       reservation,
     }
-  
     return simulateHttpRequest(action)
 }
   

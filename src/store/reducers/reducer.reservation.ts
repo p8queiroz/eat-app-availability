@@ -3,7 +3,14 @@ import * as actionTypes from "../actionTypes"
 import { ReservationAction, ReservationState } from "../type"
 
 const initialState: ReservationState = {
-    reservation: [],
+    reservation: {
+      totalReservation: 2,
+      date: "",
+      hour: "",
+      hourSlot: "",
+      restaurantName: '',
+      address: ''
+    },
   }
 
 
@@ -14,27 +21,15 @@ const initialState: ReservationState = {
     switch (action.type) {
         
       case actionTypes.ADD_RESERVATION:
-
-        const newReservation: IReservation = {
-          Id: Math.random(), // not really unique
-          Date: new Date(),
-          Hour: action.reservation.Hour,
-          ReservedTo: action.reservation.ReservedTo,
-          TotalOcupants: action.reservation.TotalOcupants
-        }
         return {
           ...state,
-          reservation : state.reservation.concat(newReservation),
+          reservation : action.reservation,
         }
 
-      case actionTypes.REMOVE_RESERVATION:
-
-        const updatedReservations: IReservation[] = state.reservation.filter(
-          reserv => reserv.Id !== action.reservation.Id
-        )
+     case actionTypes.REMOVE_RESERVATION:
         return {
           ...state,
-          reservation: updatedReservations,
+          reservation: initialState.reservation,
         }
     }
     return state

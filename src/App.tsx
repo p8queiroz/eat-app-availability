@@ -18,7 +18,7 @@ import { loadRestautantData } from './store/actions/actions.restaurant';
 
 const App: React.FC = () => {
   
-  const reservations: readonly IReservation[] = useSelector(
+  const reservations: IReservation = useSelector(
     (state: ReservationState) => state.reservation,
     shallowEqual
   );
@@ -39,13 +39,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        eat app
       </header>
       <Router>
-        <div>
-              <Link to="/">Home</Link>
-              <hr />
-              <Link to="/reservation">Reservation</Link>
           <Switch>
             <Route exact path="/">
               <Restaurant saveReservation={saveReservation}/>
@@ -54,7 +49,6 @@ const App: React.FC = () => {
               <Reservation />
             </Route>
           </Switch>
-        </div>
       </Router>
     </div>
   );

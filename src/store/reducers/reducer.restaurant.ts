@@ -11,7 +11,6 @@ const initialState: RestaurantState = {} as any
     switch (action.type) {
         
       case actionTypes.ADD_RESTAURANT:
-      debugger
         return {
           ...state,
           restaurant : action.restaurant,
