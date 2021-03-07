@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import './Reservation.css';
 import { getReservationData } from '../store/selectors/reservation.selector';
+import { friendlyDate } from '../utils';
 
 const  Reservation: React.FC = () =>  {
   
@@ -25,7 +26,7 @@ const  Reservation: React.FC = () =>  {
                  <label>{address}</label>
                </div>
                <div className="reservation-section-schedule">
-                  <div>reservation for {date}, at { hourSlot }  for {totalReservation} {`${totalReservation > 1? 'People' : 'Person'}`}</div>
+                  <div>reservation for {friendlyDate(date)}, at { hourSlot }  for {totalReservation} {`${totalReservation > 1? 'People' : 'Person'}`}</div>
                </div>
              </li>
             <li>
