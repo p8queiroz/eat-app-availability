@@ -1,0 +1,30 @@
+.hours-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #8080800f;
+    padding: 2rem;
+}
+
+.hours-container .text-section {
+    padding: 1.5rem;
+}
+
+.hours-container button {
+    box-shadow: inset 0px 1px 0px 0px #91c864;
+    background-color: #91C864;
+    border: 1px solid #d2d6d8;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 12px 18px 10px 27px;
+    text-decoration: none;
+    height: 3rem;
+    margin: .5rem;
+    border-radius: .4rem;
+}
+
+.hours-container button.not-available-slot {
+    background-color: #d2d6d8;
+    box-shadow: none;
+}
