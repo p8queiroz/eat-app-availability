@@ -9,8 +9,7 @@ const  Reservation: React.FC = () =>  {
   const history = useHistory();
   const reservationData = useSelector(getReservationData);
   const { restaurantName, address, date, hour, hourSlot, totalReservation } = reservationData;
-  const navigateTo = () => history.push('/');
-  
+  const navigateTo = (e: React.MouseEvent<HTMLInputElement>) => { e.stopPropagation();  history.push('/');}
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //setName(event.target.value);
@@ -18,7 +17,7 @@ const  Reservation: React.FC = () =>  {
 
   return (
     <>
-    <form className="formContainer">
+    <div className="formContainer">
       <ul>
             <li className="reservation-section-info">
                <div>
@@ -50,7 +49,7 @@ const  Reservation: React.FC = () =>  {
              <input type="submit" value="Complete Reservation" onClick={navigateTo} />
             </li>
       </ul>
-    </form>
+    </div>
       <div><span>Powered by Eat</span></div>
     </>
   );

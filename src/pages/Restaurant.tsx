@@ -36,15 +36,6 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
   });
  
   useEffect(() => {
-    if(name || address_line_1)
-    setReservation({
-      ...reservation,
-      restaurantName: name,
-      address: address_line_1
-    })
-  }, [name, address_line_1])
-
-  useEffect(() => {
     if(reservation.hourSlot) {
       saveReservation(reservation);  navigateTo();
     } 
@@ -65,7 +56,6 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
   }
 
   const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
-    
     const name = event.target.name as keyof typeof reservation;
     setReservation({
       ...reservation,
@@ -79,6 +69,8 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
     setReservation({
       ...reservation,
       hourSlot: value,
+      restaurantName: name,
+      address: address_line_1
     });    
   }
 
