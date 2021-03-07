@@ -18,8 +18,7 @@ const  Reservation: React.FC = () =>  {
 
   return (
     <>
-    
-<form className="formContainer">
+    <form className="formContainer">
       <ul>
             <li className="reservation-section-info">
                <div>
