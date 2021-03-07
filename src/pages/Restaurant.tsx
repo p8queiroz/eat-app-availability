@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import './Restaurant.css';
 import { loadTimeSlotData } from '../store/actions/actions.reservation';
+import { friendlyDate, friendlyDateToYYYYMMDD } from '../utils';
 
 type Props = {
   saveReservation: (reservation: IReservation | any) => void
@@ -17,9 +18,9 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
  
   const objectAttributes = restaurantInfo?.attributes;
   const { name, address_line_1 } = objectAttributes?.openings ? objectAttributes : [];
-  const openingsDate = Object.keys(objectAttributes?.openings || []); 
- 
-  const dispatch: Dispatch<any> = useDispatch();
+  const openingsDateTemp = Object.keys(objectAttributes?.openings || []); 
+  
+  const openingsDate = openingsDateTemp.map((item) => friendlyDate(item));
 
   const [hourOpening, setHourOpening] = React.useState<Array<string>>([]);
   const [hourSlotOpening, setHourSlotOpening] = React.useState<Array<string>>([]);
@@ -66,9 +67,8 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
     const name = event.target.name as keyof typeof reservation;
     setReservation({
       ...reservation,
-      [name]: event.target.value,
+      [name]: name === 'date' ? friendlyDateToYYYYMMDD(openingsDate, openingsDateTemp, event.target.value) : event.target.value,
     });
-
     setSearchResults(false);
   };
 

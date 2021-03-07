@@ -13,7 +13,6 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ReservationState } from './store/type';
 import { IReservation } from './models/IReservation';
 import { addReservation } from './store/actions/actions.reservation';
-//import useEffectAsync from './utils';
 import { loadRestautantData } from './store/actions/actions.restaurant';
 
 const App: React.FC = () => {
