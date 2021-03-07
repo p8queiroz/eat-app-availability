@@ -1,11 +1,9 @@
 .formContainer{
-	max-width: 50%;
-	background: #FAFAFA;
+	max-width: 80%;
 	padding: 30px;
 	margin: 50px auto;
-	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 	border-radius: .7rem;
-	border: 1px solid #767676;
+	border: 2px solid #f7f7f7;
 }
 
 .formContainer ul{
@@ -58,7 +56,7 @@
 	width: 49%;
 }
 .formContainer ul li .field-split-3-parts{
-	width: 41.7%
+	width: 39%
 }
 
 .formContainer ul li .field-full{
@@ -68,8 +66,9 @@
 .formContainer select {
 	float: left;
 	padding: .45rem;
-	box-shadow: 0 0 5px #d2d6d8;
 	border:1px solid #d2d6d8;
+	width: 10%;
+	color: #cfd2d3;
 }
 
 .formContainer ul li input.align-left{
