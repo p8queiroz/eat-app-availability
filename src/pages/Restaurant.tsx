@@ -92,7 +92,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
               </div>
               </li>
                 <li>
-                    <select   value={reservation.totalReservation}  name="totalReservation" className="field-style field-split-3-parts  align-left" onChange={handleChange}>          
+                    <select   value={reservation.totalReservation}  name="totalReservation" className="field-style border-radius-left field-split-3-parts  align-left" onChange={handleChange}>          
                         {ocupants.map(item => <option key={item} value={item}>&#xf007; {` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
                     </select>
                     <select   name="date" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
@@ -111,7 +111,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                             )
                           }
                     </select>
-                    <input type="submit"  className="field-style" onClick={search} value="Search" />
+                    <input type="submit"  className="field-style border-radius-right" onClick={search} value="Search" />
                 </li>
                 <li>
                   {searchResults && hourSlotOpening && hourSlotOpening.length && (<AvailableTimeTable hourSlotOpening={hourSlotOpening} slothour={slothour}/>)}                  

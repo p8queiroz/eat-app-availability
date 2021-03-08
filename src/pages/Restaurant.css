@@ -44,7 +44,13 @@
 	-o-transition: all 0.30s ease-in-out;
 }
 
+.formContainerRestaurant ul li .border-radius-left {
+	border-radius: 9px 0 0 9px;
+}
 
+.formContainerRestaurant ul li .border-radius-right {
+	border-radius: 0 9px 9px 0;
+}
 .formContainerRestaurant ul li  .field-style:focus, .field-style:hover{
 	box-shadow: 0 0 5px #91C864;
 	border:1px solid #d2d6d8;
