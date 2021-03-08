@@ -92,11 +92,11 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
               </section>
               </li>
                 <li>
-                    <div className="border-radius-left"><i className="fas fa-user"></i> </div>
+                    <div className="restaurant border-radius-left"><i className="fas fa-user"></i> </div>
                     <select   value={reservation.totalReservation}  name="totalReservation" className="field-style border-radius-left field-split-3-parts  align-left" onChange={handleChange}>          
                         {ocupants.map(item => <option key={item} value={item}>{` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
                     </select>
-                    <div className="border-radius-middle"><i className="fas fa-calendar"></i></div>
+                    <div className="restaurant border-radius-middle"><i className="fas fa-calendar"></i></div>
                     <select   name="date" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
                       <option key={'date-option'} value=""> Select </option>
                           {
@@ -105,7 +105,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                             )
                           }
                     </select>
-                    <div className="border-radius-middle"><i className="fas fa-clock-o"></i></div>
+                    <div className="restaurant border-radius-middle"><i className="fas fa-clock-o"></i></div>
                     <select   name="hour" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
                       <option key={'hour-option'} value=""> Select </option>
                           {

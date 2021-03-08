@@ -18,7 +18,7 @@
 	display: flex;	
 }
 
-.formContainerRestaurant ul div{
+.formContainerRestaurant ul div.restaurant{
 	height: 4rem;
     padding: 1.2rem .5rem;
 	color: #91C864;
@@ -33,17 +33,17 @@
     -webkit-transition: all 0.30s ease-in-out;
 }
 
-.formContainerRestaurant ul div.border-radius-left{
+.formContainerRestaurant ul  div.restaurant.border-radius-left{
 	border-radius: 9px 0 0 9px;
 	border-right: none;
 }
 
-.formContainerRestaurant ul div.border-radius-right{
+.formContainerRestaurant ul div.restaurant.border-radius-right{
 	border-radius: 0 9px 9px 0;
 	border-left: none;
 }
 
-.formContainerRestaurant ul div.border-radius-middle{
+.formContainerRestaurant ul div.restaurant.border-radius-middle{
 	border-left: none;
 	border-right: none;
 }
