@@ -114,7 +114,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                             )
                           }
                     </select>
-                    <input type="submit"  className="field-style border-radius-right" onClick={search} value="Search" />
+                    <input type="submit"  className="field-style restaurant border-radius-right" onClick={search} value="Search" />
                 </li>
                 <li>
                   {searchResults && hourSlotOpening && hourSlotOpening.length && (<AvailableTimeTable hourSlotOpening={hourSlotOpening} slothour={slothour}/>)}                  
