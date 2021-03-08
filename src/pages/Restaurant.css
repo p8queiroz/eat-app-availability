@@ -18,6 +18,46 @@
 	display: flex;	
 }
 
+.formContainerRestaurant ul div{
+	height: 4rem;
+    padding: 1.2rem .5rem;
+	color: #91C864;
+    font-family: fontAwesome, 'Segoe UI';
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    border: 1px solid #d2d6d8;
+	box-shadow: 0 0 0 #d2d6d8;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.formContainerRestaurant ul div.border-radius-left{
+	border-radius: 9px 0 0 9px;
+	border-right: none;
+}
+
+.formContainerRestaurant ul div.border-radius-right{
+	border-radius: 0 9px 9px 0;
+	border-left: none;
+}
+
+.formContainerRestaurant ul div.border-radius-middle{
+	border-left: none;
+	border-right: none;
+}
+
+
+.formContainerRestaurant ul div i {
+	margin-top: 1.5rem;
+	margin-top: 1.5rem;
+    font-style: normal;
+    font-size: 1.3rem;
+	color: #91C864;
+}
+
+
 
 .formContainerRestaurant ul li.reservation-section-info {
 	display: flex;
@@ -36,21 +76,15 @@
 	padding: 8px;
 	outline: none;
 	border: 1px solid #d2d6d8;
-	box-shadow: 0 0 5px #d2d6d8;
-	border:1px solid #d2d6d8; 
+	border-right: none;
+	border-left: none;
+     box-shadow: 0 0 0 #d2d6d8;
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
 }
 
-.formContainerRestaurant ul li .border-radius-left {
-	border-radius: 9px 0 0 9px;
-}
-
-.formContainerRestaurant ul li .border-radius-right {
-	border-radius: 0 9px 9px 0;
-}
 .formContainerRestaurant ul li  .field-style:focus, .field-style:hover{
 	box-shadow: 0 0 5px #91C864;
 	border:1px solid #d2d6d8;
@@ -60,6 +94,7 @@
 	width: 30.2%;
 	height: 4rem;
 	border-right: none;
+	color: #c6c9ca;
 }
 
 .formContainerRestaurant ul li input[type="button"], 

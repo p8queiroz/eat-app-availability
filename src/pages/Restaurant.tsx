@@ -86,28 +86,31 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
       <div className="formContainerRestaurant">
           <ul>
             <li className="reservation-section-info">
-              <div>
+              <section>
                 <h2>{name}</h2>
                 <label>{address_line_1}</label>             
-              </div>
+              </section>
               </li>
                 <li>
+                    <div className="border-radius-left"><i className="fas fa-user"></i> </div>
                     <select   value={reservation.totalReservation}  name="totalReservation" className="field-style border-radius-left field-split-3-parts  align-left" onChange={handleChange}>          
-                        {ocupants.map(item => <option key={item} value={item}>&#xf007; {` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
+                        {ocupants.map(item => <option key={item} value={item}>{` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
                     </select>
+                    <div className="border-radius-middle"><i className="fas fa-calendar"></i></div>
                     <select   name="date" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
-                      <option key={'date-option'} value="">&#xf073;  Select </option>
+                      <option key={'date-option'} value=""> Select </option>
                           {
                             openingsDate && openingsDate.length && (
                               openingsDate.map((item) => <option key={item} value={item}>&#xf073;  {item} </option>)
                             )
                           }
                     </select>
+                    <div className="border-radius-middle"><i className="fas fa-clock-o"></i></div>
                     <select   name="hour" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
-                      <option key={'hour-option'} value=""> &#xf017; Select </option>
+                      <option key={'hour-option'} value=""> Select </option>
                           {
                             hourOpening && hourOpening.length && (
-                              hourOpening.map((item) => <option key={item} value={item}> &#xf017; {item} </option>)
+                              hourOpening.map((item) => <option key={item} value={item}> {item} </option>)
                             )
                           }
                     </select>
