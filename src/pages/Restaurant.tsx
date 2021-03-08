@@ -101,7 +101,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                       <option key={'date-option'} value=""> Select </option>
                           {
                             openingsDate && openingsDate.length && (
-                              openingsDate.map((item) => <option key={item} value={item}>&#xf073;  {item} </option>)
+                              openingsDate.map((item) => <option key={item} value={item}> {item} </option>)
                             )
                           }
                     </select>
