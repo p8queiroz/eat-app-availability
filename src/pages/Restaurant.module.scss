@@ -1,0 +1,141 @@
+.formContainerRestaurant {
+  max-width: 85%;
+  background: #fdfdfd;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: .7rem;
+  border: 1px solid #ebebeb;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+    }
+
+    div.restaurant {
+      height: 4rem;
+      padding: 1.2rem .5rem;
+      color: #91C864;
+      font-family: fontAwesome, 'Segoe UI';
+      font-size: 1.5rem;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      border: 1px solid #d2d6d8;
+      box-shadow: 0 0 0 #d2d6d8;
+      -webkit-transition: all 0.30s ease-in-out;
+
+      &.borderRadiusLeft {
+        border-radius: 9px 0 0 9px;
+        border-right: none;
+      }
+
+      &.borderRadiusRight {
+        border-radius: 0 9px 9px 0;
+        border-left: none;
+      }
+    }
+  }
+}
+
+div input[type="submit"] {
+  border-radius: 0 9px 9px 0;
+  border-left: none;
+}
+
+.formContainerRestaurant ul {
+  div {
+    &.restaurant.borderRadiusMiddle {
+      border-left: none;
+      border-right: none;
+    }
+
+    i {
+      margin-top: 1.5rem;
+      margin-top: 1.5rem;
+      font-style: normal;
+      font-size: 1.3rem;
+      color: #91C864;
+    }
+  }
+
+  li {
+    &.reservationSectionInfo {
+      display: flex;
+      justify-content: flex-start;
+      color: #737575;
+      margin: 0 0 3rem;
+    }
+
+    .fieldStyle {
+      color: #91C864;
+      font-family: fontAwesome, 'Segoe UI';
+      font-size: 1.5rem;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      padding: 8px;
+      outline: none;
+      border: 1px solid #d2d6d8;
+      border-right: none;
+      border-left: none;
+      box-shadow: 0 0 0 #d2d6d8;
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+
+      &:focus {
+        box-shadow: 0 0 5px #91C864;
+        border: 1px solid #d2d6d8;
+      }
+    }
+  }
+}
+
+.fieldStyle:hover {
+  box-shadow: 0 0 5px #91C864;
+  border: 1px solid #d2d6d8;
+}
+
+.formContainerRestaurant ul li {
+  .fieldSplit3Parts {
+    width: 30.2%;
+    height: 4rem;
+    border-right: none;
+    color: #c6c9ca;
+  }
+
+  input {
+    &[type="button"], &[type="submit"] {
+      -moz-box-shadow: inset 0px 1px 0px 0px #91C864;
+      -webkit-box-shadow: inset 0px 1px 0px 0px #91C864;
+      box-shadow: inset 0px 1px 0px 0px #91C864;
+      background-color: #91C864;
+      border: 1px solid #d2d6d8;
+      display: inline-block;
+      cursor: pointer;
+      color: #FFFFFF;
+      padding: 12px 18px 10px 27px;
+      text-decoration: none;
+      height: 4rem;
+      width: 20%;
+    }
+
+    &[type="button"]:hover {
+      background: linear-gradient(to bottom, #91C864 5%, #aae47b 100%);
+      background-color: #91C864;
+    }
+
+    &[type="submit"] {
+      &:hover, &:focus {
+        background: linear-gradient(to bottom, #91C864 5%, #aae47b 100%);
+        background-color: #91C864;
+      }
+    }
+  }
+}

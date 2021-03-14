@@ -4,7 +4,7 @@ import { IReservation } from '../models/IReservation';
 import { getRestaurantData } from '../store/selectors/restaurant.selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import styles from './Restaurant.module.css';
+import styles from './Restaurant.module.scss';
 import { loadTimeSlotData } from '../store/actions/actions.reservation';
 import { friendlyDate, friendlyDateToYYYYMMDD, joinAll } from '../utils';
 

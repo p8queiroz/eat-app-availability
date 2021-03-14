@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './Reservation.module.css';
+import styles from './Reservation.module.scss';
 import { getReservationData } from '../store/selectors/reservation.selector';
 import { friendlyDate, joinAll } from '../utils';
 
@@ -11,10 +11,6 @@ const  Reservation: React.FC = () =>  {
   const reservationData = useSelector(getReservationData);
   const { restaurantName, address, date, hour, hourSlot, totalReservation } = reservationData;
   const navigateTo = (e: React.MouseEvent<HTMLInputElement>) => { e.stopPropagation();  history.push('/');}
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //setName(event.target.value);
-  };
 
   return (
     <>

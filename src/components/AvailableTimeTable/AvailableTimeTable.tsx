@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from  './AvailableTimeTable.module.css';
+import styles from  './AvailableTimeTable.module.scss';
 
 type Props = {
   slothour: (value: string) => void,
