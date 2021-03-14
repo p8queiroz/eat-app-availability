@@ -6,6 +6,7 @@
 	border: 2px solid #f7f7f7;
 	font-size: 1rem;
     color: #afafaf;
+	
 }
 
 .formContainer ul{
@@ -20,23 +21,22 @@
 	min-height: 35px;
 }
 
-.formContainer ul li.reservation-section-info {
+.formContainer ul li.reservationSectionInfo {
 	display: flex;
 	justify-content: space-around;
 	color: #737575;
 }
 
-.formContainer ul li div.reservation-section-schedule {
+.formContainer ul li div.reservationSectionSchedule {
 	background-color: #f3f3f3;
 	width: 45%;
 }
 
-.formContainer ul li div.reservation-section-schedule div {
-	margin-top: 2rem;
+.formContainer ul li div.reservationSectionSchedule div {
+	padding: 1.5rem
 }
 
-
-.formContainer ul li  .field-style{
+.formContainer ul li  .fieldStyle{
 	box-sizing: border-box; 
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
@@ -49,19 +49,19 @@
 	-o-transition: all 0.30s ease-in-out;
 }
 
-.formContainer ul li  .field-style:focus{
+.formContainer ul li  .fieldStyle:focus{
 	box-shadow: 0 0 5px #d2d6d8;
 	border:1px solid #d2d6d8;
 }
 
-.formContainer ul li .field-split{
+.formContainer ul li .fieldSplit{
 	width: 49%;
 }
-.formContainer ul li .field-split-3-parts{
+.formContainer ul li .fieldSplit3Parts{
 	width: 39%
 }
 
-.formContainer ul li .field-full{
+.formContainer ul li .fieldFull{
 	width: 100%;
 }
 
@@ -73,14 +73,14 @@
 	color: #cfd2d3;
 }
 
-.formContainer ul li div.align-left{
+.formContainer ul li div.alignLeft{
 	float:left;
 }
 
-.formContainer ul li input.align-left{
+.formContainer ul li input.alignLeft{
 	float:left;
 }
-.formContainer ul li input.align-right{
+.formContainer ul li input.alignRight{
 	float:right;
 }
 .formContainer ul li textarea{
@@ -99,6 +99,7 @@
 	color: #FFFFFF;
 	padding: 8px 18px;
 	text-decoration: none;
+	border-radius: 3px;
 }
 .formContainer ul li input[type="button"]:hover, 
 .formContainer ul li input[type="submit"]:hover {

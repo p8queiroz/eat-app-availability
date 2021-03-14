@@ -1,5 +1,5 @@
 import React from 'react';
-import  './AvailableTimeTable.css';
+import styles from  './AvailableTimeTable.module.css';
 
 type Props = {
   slothour: (value: string) => void,
@@ -12,12 +12,14 @@ const AvailableTimeTable: React.FC<Props> = ({ slothour, hourSlotOpening }) => {
       slothour(value);
     }
 
+    const hours = hourSlotOpening && hourSlotOpening.length;
+
     return (
-     <div className="hours-container">
-         <div className="text-section">Available Openning, please select a time to reserve:</div>
-         <div className="available-section">
-           {hourSlotOpening && hourSlotOpening.length && (
-             hourSlotOpening.map(ele => <button key={ele.id} onClick={() => handleChange(ele.attributes.label)} className={ele.attributes.available ? '' : 'not-available-slot'}>{ele.attributes.label}</button>)
+     <div className={styles.hoursContainer}>
+         <div className={styles.textSection}>Available Openning, please select a time to reserve:</div>
+         <div className={styles.availableSection}>
+           {hours && (
+             hourSlotOpening.map(ele => <button key={ele.id} onClick={() => handleChange(ele.attributes.label)} className={ele.attributes.available ? '' : styles.notAvailableSlot}>{ele.attributes.label}</button>)
            )}
          </div>
        </div> 

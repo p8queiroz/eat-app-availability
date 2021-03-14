@@ -1,4 +1,4 @@
-.hours-container {
+.hoursContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,11 +10,11 @@
     border: none !important;
 }
 
-.hours-container .text-section {
+.hoursContainer .textSection {
     padding: 1.5rem;
 }
 
-.hours-container button {
+.hoursContainer button {
     box-shadow: inset 0px 1px 0px 0px #91c864;
     background-color: #91C864;
     border: 1px solid #d2d6d8;
@@ -30,7 +30,7 @@
     font-size: 1.5rem;
 }
 
-.hours-container button.not-available-slot {
+.hoursContainer button.notAvailableSlot {
     background-color: #d2d6d8;
     box-shadow: none;
 }

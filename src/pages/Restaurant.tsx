@@ -4,9 +4,9 @@ import { IReservation } from '../models/IReservation';
 import { getRestaurantData } from '../store/selectors/restaurant.selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import './Restaurant.css';
+import styles from './Restaurant.module.css';
 import { loadTimeSlotData } from '../store/actions/actions.reservation';
-import { friendlyDate, friendlyDateToYYYYMMDD } from '../utils';
+import { friendlyDate, friendlyDateToYYYYMMDD, joinAll } from '../utils';
 
 type Props = {
   saveReservation: (reservation: IReservation | any) => void
@@ -83,21 +83,21 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
 
   return (
     <>
-      <div className="formContainerRestaurant">
+      <div className={styles.formContainerRestaurant}>
           <ul>
-            <li className="reservation-section-info">
+            <li className={styles.reservationSectionInfo}>
               <section>
                 <h2>{name}</h2>
                 <label>{address_line_1}</label>             
               </section>
               </li>
                 <li>
-                    <div className="restaurant border-radius-left"><i className="fas fa-user"></i> </div>
-                    <select   value={reservation.totalReservation}  name="totalReservation" className="field-style border-radius-left field-split-3-parts  align-left" onChange={handleChange}>          
+                    <div className={ joinAll(styles.restaurant, styles.borderRadiusLeft)}><i className="fas fa-user"></i> </div>
+                    <select   value={reservation.totalReservation}  name="totalReservation" className={ joinAll(styles.fieldStyle, styles.borderRadiusLeft, styles.fieldSplit3Parts, styles.alignLeft) } onChange={handleChange}>          
                         {ocupants.map(item => <option key={item} value={item}>{` ${item} ${item > 1? 'People' : 'Person'}`} </option>)}
                     </select>
-                    <div className="restaurant border-radius-middle"><i className="fas fa-calendar"></i></div>
-                    <select   name="date" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
+                    <div className={ joinAll(styles.restaurant, styles.borderRadiusMiddle)}><i className="fas fa-calendar"></i></div>
+                    <select   name="date" className={ joinAll(styles.fieldStyle, styles.fieldSplit3Parts, styles.alignLeft)}  onChange={handleChange}>
                       <option key={'date-option'} value=""> Select </option>
                           {
                             openingsDate && openingsDate.length && (
@@ -105,8 +105,8 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                             )
                           }
                     </select>
-                    <div className="restaurant border-radius-middle"><i className="fas fa-clock-o"></i></div>
-                    <select   name="hour" className="field-style field-split-3-parts  align-left" onChange={handleChange}>
+                    <div className={ joinAll(styles.restaurant, styles.borderRadiusMiddle)}><i className="fas fa-clock-o"></i></div>
+                    <select   name="hour" className={ joinAll(styles.fieldStyle, styles.fieldSplit3Parts, styles.alignLeft)} onChange={handleChange}>
                       <option key={'hour-option'} value=""> Select </option>
                           {
                             hourOpening && hourOpening.length && (
@@ -114,7 +114,7 @@ const  Restaurant: React.FC<Props> = ({ saveReservation }) =>  {
                             )
                           }
                     </select>
-                    <input type="submit"  className="field-style restaurant border-radius-right" onClick={search} value="Search" />
+                    <input type="submit"  className={joinAll(styles.fieldStyle, styles.restaurant, styles.borderRadiusRight)} onClick={search} value="Search" />
                 </li>
                 <li>
                   {searchResults && hourSlotOpening && hourSlotOpening.length && (<AvailableTimeTable hourSlotOpening={hourSlotOpening} slothour={slothour}/>)}                  

@@ -1,11 +1,9 @@
 import React, { Dispatch, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Restaurant from './pages/Restaurant';
 import Reservation from './pages/Reservation';
@@ -17,10 +15,9 @@ import { loadRestautantData } from './store/actions/actions.restaurant';
 
 const App: React.FC = () => {
   
-  const reservations: IReservation = useSelector(
-    (state: ReservationState) => state.reservation,
-    shallowEqual
-  );
+  // const reservations: IReservation = useSelector(
+  //   (state: ReservationState) => state.reservation
+  //   );
 
   const dispatch: Dispatch<any> = useDispatch();
 
@@ -35,8 +32,8 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
       </header>
       <Router>
           <Switch>

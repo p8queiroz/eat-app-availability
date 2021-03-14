@@ -15,3 +15,7 @@ export const friendlyDate: (dateInput: string) => string = (dateInput) => {
 export const friendlyDateToYYYYMMDD: (arrayFriendly: string[], arrayNumbers: string[], currentSelection: any) => string = (arrayFriendly, arrayNumbers, currentSelection) => {
   return arrayNumbers[arrayFriendly.indexOf(currentSelection)];
 }
+
+export const  joinAll = (...classes: any) => {
+  return classes.join(" ");
+}
